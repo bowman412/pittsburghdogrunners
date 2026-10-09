@@ -4,9 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pittsburgh Dog Runners provides dedicated dog-running services in Pittsburgh. Book a 30-minute run for $40.">
+
+  <meta
+    name="description"
+    content="Pittsburgh Dog Runners provides dedicated dog-running services in Pittsburgh. Choose 30, 45, or 60-minute runs."
+  >
   <meta name="theme-color" content="#003594">
-  <title>Pittsburgh Dog Runners | Your Dog Has Energy. We've Got Miles.</title>
+
+  <title>Pittsburgh Dog Runners | Better Runs. Happier Dogs.</title>
 
   <style>
     :root {
@@ -18,76 +23,41 @@
       --text: #202b3c;
       --muted: #657186;
       --white: #ffffff;
-      --border: #dfe5ef;
+      --border: #e3e8f0;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.6;
       background: var(--white);
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
     .container {
-      width: min(1120px, 90%);
-      margin: auto;
+      width: min(1080px, 90%);
+      margin: 0 auto;
     }
+
+    /* Header */
 
     header {
       background: var(--blue);
       color: var(--white);
     }
 
-
-.pricing-options {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  align-items: stretch;
-}
-
-.pricing-options .pricing-card {
-  width: 100%;
-  padding: 30px 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.pricing-options .pricing-card p {
-  color: var(--muted);
-  flex-grow: 1;
-}
-
-.pricing-options .featured {
-  border-top: 6px solid var(--gold);
-  background: var(--gold-light);
-}
-
-.popular-label {
-  background: var(--gold);
-  color: var(--blue-dark);
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-}
-
-@media (max-width: 760px) {
-  .pricing-options {
-    grid-template-columns: 1fr;
-  }
-}
-    
     nav {
       display: flex;
       align-items: center;
@@ -99,24 +69,24 @@
     .brand {
       color: var(--white);
       text-decoration: none;
+      font-size: 17px;
       font-weight: 800;
-      letter-spacing: 1px;
-      line-height: 1.2;
+      letter-spacing: 0.8px;
+      line-height: 1.3;
     }
 
     .brand span {
       display: block;
       color: var(--gold);
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 2px;
       margin-top: 5px;
     }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
       align-items: center;
+      gap: 26px;
     }
 
     .nav-links a:not(.button) {
@@ -125,6 +95,12 @@
       font-size: 14px;
     }
 
+    .nav-links a:not(.button):hover {
+      color: var(--gold);
+    }
+
+    /* Buttons */
+
     .button {
       display: inline-block;
       padding: 13px 22px;
@@ -132,179 +108,222 @@
       color: var(--blue-dark);
       text-decoration: none;
       font-weight: 800;
-      border-radius: 6px;
-      transition: transform .2s, background .2s;
+      font-size: 14px;
+      border-radius: 5px;
+      transition: background 0.2s, transform 0.2s;
     }
 
     .button:hover {
       background: #ffca52;
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
+
+    /* Hero */
 
     .hero {
       background: var(--blue);
       color: var(--white);
-      padding: 42px 0 82px;
-      border-top: 1px solid rgba(255,255,255,.15);
+      padding: 48px 0 72px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 52px;
+      grid-template-columns: 1fr 0.9fr;
       align-items: center;
+      gap: 54px;
     }
 
     .eyebrow {
       color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 800;
     }
 
-    .hero .eyebrow { color: var(--gold); }
+    .hero .eyebrow {
+      color: var(--gold);
+    }
 
-    h1, h2, h3 { line-height: 1.15; }
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
 
     h1 {
-      font-size: clamp(42px, 6vw, 68px);
-      letter-spacing: -2px;
-      margin: 16px 0 22px;
+      font-size: clamp(40px, 5.5vw, 62px);
+      letter-spacing: -1.8px;
+      margin: 18px 0;
     }
 
     h2 {
-      font-size: clamp(30px, 4vw, 42px);
-      letter-spacing: -1px;
-      margin: 12px 0 18px;
+      font-size: clamp(29px, 4vw, 40px);
+      letter-spacing: -0.8px;
+      margin: 12px 0 16px;
     }
 
-    h3 { font-size: 21px; }
+    h3 {
+      font-size: 19px;
+      margin: 0 0 10px;
+    }
 
-    .hero p {
+    .hero-copy {
       color: #e2eaf8;
-      font-size: 18px;
-      max-width: 540px;
-      margin-bottom: 28px;
-    }
-
-    .hero-photo {
-      width: 100%;
-      min-height: 360px;
-      height: 100%;
-      max-height: 490px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 3px solid rgba(255,184,28,.8);
+      font-size: 17px;
+      max-width: 440px;
+      margin: 0 0 28px;
     }
 
     .hero-note {
-      color: #e2eaf8;
-      font-size: 14px;
       margin-top: 16px;
+      color: #e2eaf8;
+      font-size: 13px;
     }
 
-    section { padding: 82px 0; }
+    .hero-photo {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      max-height: 430px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+    }
+
+    /* General sections */
+
+    section {
+      padding: 72px 0;
+    }
 
     .section-intro {
-      max-width: 650px;
-      margin-bottom: 36px;
+      max-width: 630px;
+      margin-bottom: 34px;
     }
 
-    .section-intro p { color: var(--muted); }
+    .section-intro p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
 
-    .center { text-align: center; }
+    .center {
+      text-align: center;
+    }
 
     .center .section-intro {
       margin-left: auto;
       margin-right: auto;
     }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .cream {
+      background: var(--cream);
     }
 
-    .feature {
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--gold);
-      border-radius: 8px;
-      background: var(--white);
-    }
-
-    .feature-icon {
-      color: var(--blue);
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .feature p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-
-    .cream { background: var(--cream); }
+    /* How it works */
 
     .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 34px;
     }
 
     .step-number {
       display: inline-grid;
       place-items: center;
-      width: 42px;
-      height: 42px;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 17px;
       border-radius: 50%;
       background: var(--gold);
       color: var(--blue-dark);
       font-weight: 800;
     }
 
-    .step p { color: var(--muted); }
+    .step p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    /* Pricing */
+
+    .pricing-options {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      align-items: stretch;
+      text-align: center;
+    }
 
     .pricing-card {
-      max-width: 580px;
-      margin: 0 auto;
-      padding: 38px;
-      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
       border: 1px solid var(--border);
-      border-top: 6px solid var(--gold);
-      border-radius: 12px;
-      box-shadow: 0 12px 40px rgba(0,53,148,.08);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--gold);
+    }
+
+    .pricing-card .eyebrow {
+      font-size: 10px;
+      letter-spacing: 1.3px;
+    }
+
+    .pricing-card h3 {
+      margin: 12px 0 8px;
     }
 
     .price {
       color: var(--blue);
-      font-size: 58px;
+      font-size: 48px;
+      line-height: 1.2;
       font-weight: 800;
-      line-height: 1.1;
-      margin: 18px 0 8px;
+      margin: 8px 0;
     }
 
-    .price small {
-      font-size: 17px;
-      font-weight: 500;
+    .price-note {
       color: var(--muted);
+      font-size: 14px;
+      min-height: 45px;
+      margin: 0 0 24px;
     }
 
-    .pricing-card ul {
-      padding-left: 20px;
-      color: var(--muted);
-      text-align: left;
-      margin: 24px 0;
+    .pricing-card .button {
+      width: 100%;
+      margin-top: auto;
     }
+
+    .popular-label {
+      color: var(--blue-dark);
+      background: var(--gold-light);
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .pricing-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 22px;
+    }
+
+    /* FAQ */
 
     .faq-list {
-      max-width: 800px;
-      margin: auto;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     details {
-      padding: 20px 0;
+      padding: 19px 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -313,70 +332,130 @@
       font-weight: 700;
     }
 
-    details p { color: var(--muted); }
+    details p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    /* Final booking section */
 
     .contact {
       background: var(--blue);
       color: var(--white);
       text-align: center;
-      border-top: 6px solid var(--gold);
+      padding: 66px 0;
+      border-top: 5px solid var(--gold);
     }
 
-    .contact .eyebrow { color: var(--gold); }
+    .contact .eyebrow {
+      color: var(--gold);
+    }
+
+    .contact h2 {
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     .contact p {
       color: #e2eaf8;
-      max-width: 580px;
-      margin: 0 auto 28px;
+      max-width: 530px;
+      margin: 0 auto 26px;
     }
+
+    /* Footer */
 
     footer {
       background: var(--blue-dark);
       color: #e2eaf8;
-      padding: 25px 0;
-      font-size: 13px;
+      padding: 23px 0;
+      font-size: 12px;
     }
 
     footer .container {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       justify-content: space-between;
     }
 
-    footer a { color: var(--gold); }
+    /* Mobile */
 
     @media (max-width: 760px) {
       nav {
         align-items: flex-start;
         flex-direction: column;
+        gap: 18px;
       }
 
-      .nav-links { gap: 16px; }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
 
-      .hero { padding: 28px 0 58px; }
+      .hero {
+        padding: 38px 0 48px;
+      }
 
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 30px;
       }
 
-      .hero-photo { min-height: 260px; }
+      .hero-photo {
+        aspect-ratio: 16 / 10;
+        max-height: 340px;
+      }
 
-      section { padding: 58px 0; }
+      section {
+        padding: 54px 0;
+      }
 
-      .features, .steps {
+      .steps {
         grid-template-columns: 1fr;
+        gap: 28px;
       }
 
-      .pricing-card { padding: 26px; }
+      .pricing-options {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 0 auto;
+        gap: 16px;
+      }
 
-      h1 { letter-spacing: -1px; }
+      .pricing-card {
+        padding: 28px 22px;
+      }
+
+      .price-note {
+        min-height: 0;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      footer .container {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .button {
+        transition: none;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- Temporary booking link: replace with your actual customer
+       booking portal URL when your Time To Pet account is ready. -->
+
   <header>
     <div class="container">
       <nav aria-label="Main navigation">
@@ -389,84 +468,64 @@
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
-          <a class="button" href="#contact">Book a Run</a>
+          <a
+            class="button"
+            href="https://www.timetopet.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Book a Run</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- Hero -->
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Pittsburgh's dog-running service</div>
+
           <h1>Your dog has energy. We've got miles.</h1>
-          <p>
-            Give your dog a chance to run, explore, and get moving
-            with dedicated running companions in Pittsburgh.
+
+          <p class="hero-copy">
+            Dedicated runs for dogs who love to move.
+            Give your dog an active outing with Pittsburgh Dog Runners.
           </p>
-          <a class="button" href="#contact">Get Your Dog Running →</a>
+
+          <a
+            class="button"
+            href="https://www.timetopet.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Book a Run →</a>
+
           <div class="hero-note">
-            30-minute runs · $40 per session
+            30, 45, and 60-minute sessions available.
           </div>
         </div>
 
+        <!-- Replace this image URL with your chosen dog-only
+             running-harness-and-leash photo when ready. -->
         <img
           class="hero-photo"
-          src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1100&q=85"
-          alt="Happy golden retriever outdoors"
+          src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
+          alt="Golden retriever outdoors"
+          fetchpriority="high"
         >
       </div>
     </section>
 
-    <section>
-      <div class="container center">
-        <div class="section-intro">
-          <div class="eyebrow">More than a walk</div>
-          <h2>For dogs who love to move.</h2>
-          <p>
-            Life gets busy. Your dog's need for exercise doesn't.
-            Pittsburgh Dog Runners helps owners make active outings
-            part of their dog's routine.
-          </p>
-        </div>
-
-        <div class="features">
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">🏃</div>
-            <h3>Purposeful exercise</h3>
-            <p>
-              An active outing tailored to your dog's fitness,
-              pace, and comfort.
-            </p>
-          </article>
-
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">🐾</div>
-            <h3>Personal attention</h3>
-            <p>
-              We learn about your dog's needs and plan a run
-              appropriate for them.
-            </p>
-          </article>
-
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">📍</div>
-            <h3>Local service</h3>
-            <p>
-              Pittsburgh-area service designed around busy
-              owners and energetic dogs.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cream" id="how-it-works">
+    <!-- How it works -->
+    <section id="how-it-works">
       <div class="container">
         <div class="section-intro">
           <div class="eyebrow">Simple from the start</div>
-          <h2>Three steps to a happier, tired dog.</h2>
+          <h2>A better outing starts here.</h2>
+          <p>
+            Getting your dog moving shouldn't be complicated.
+            Tell us about your dog, choose a session, and arrange a run.
+          </p>
         </div>
 
         <div class="steps">
@@ -474,76 +533,101 @@
             <span class="step-number">1</span>
             <h3>Tell us about your dog</h3>
             <p>
-              Share your dog's age, size, running experience,
-              and any needs we should know about.
+              Share your dog's needs, fitness, and running experience
+              through our booking process.
             </p>
           </article>
 
           <article class="step">
             <span class="step-number">2</span>
-            <h3>Arrange a run</h3>
+            <h3>Choose a run</h3>
             <p>
-              We'll coordinate a time and discuss a suitable
-              route and pace for your dog.
+              Select a session length and arrange a suitable time
+              for your dog.
             </p>
           </article>
 
           <article class="step">
             <span class="step-number">3</span>
-            <h3>Get moving</h3>
+            <h3>Let's get moving</h3>
             <p>
-              Your dog gets an active outing while you focus
-              on the rest of your day.
+              Your dog gets an active outing while you focus on
+              the rest of your day.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="pricing">
-      
-<section id="pricing">
-  <div class="container center">
-    <div class="section-intro">
-      <div class="eyebrow">Straightforward pricing</div>
-      <h2>More time. More miles.</h2>
-      <p>
-        Choose the run that fits your dog's energy level
-        and exercise needs.
-      </p>
-    </div>
+    <!-- Pricing -->
+    <section class="cream" id="pricing">
+      <div class="container center">
+        <div class="section-intro">
+          <div class="eyebrow">Straightforward pricing</div>
+          <h2>Choose your run.</h2>
+          <p>
+            Choose the session length that fits your dog's needs
+            and running ability.
+          </p>
+        </div>
 
-    <div class="pricing-options">
-      <article class="pricing-card">
-        <div class="eyebrow">The essential run</div>
-        <h3>30-Minute Run</h3>
-        <div class="price">$40</div>
-        <p>A dedicated half-hour of exercise.</p>
-        <a class="button" href="#contact">Choose 30 Minutes</a>
-      </article>
+        <div class="pricing-options">
+          <article class="pricing-card">
+            <div class="eyebrow">The essential run</div>
+            <h3>30-Minute Run</h3>
+            <div class="price">$40</div>
+            <p class="price-note">
+              A dedicated half-hour of exercise.
+            </p>
+            <a
+              class="button"
+              href="https://www.timetopet.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Choose 30 Minutes</a>
+          </article>
 
-      <article class="pricing-card">
-        <div class="eyebrow">A little extra</div>
-        <h3>45-Minute Run</h3>
-        <div class="price">$55</div>
-        <p>Extend your session by 15 minutes.</p>
-        <a class="button" href="#contact">Choose 45 Minutes</a>
-      </article>
+          <article class="pricing-card">
+            <div class="eyebrow">A little extra</div>
+            <h3>45-Minute Run</h3>
+            <div class="price">$55</div>
+            <p class="price-note">
+              An extra 15 minutes to keep moving.
+            </p>
+            <a
+              class="button"
+              href="https://www.timetopet.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Choose 45 Minutes</a>
+          </article>
 
-      <article class="pricing-card featured">
-        <div class="popular-label">LONGER SESSION</div>
-        <div class="eyebrow">More time to explore</div>
-        <h3>60-Minute Run</h3>
-        <div class="price">$65</div>
-        <p>For dogs suited to a longer outing.</p>
-        <a class="button" href="#contact">Choose 60 Minutes</a>
-      </article>
-    </div>
-  </div>
-</section>
+          <article class="pricing-card featured">
+            <div class="popular-label">LONGER SESSION</div>
+            <div class="eyebrow">More time to explore</div>
+            <h3>60-Minute Run</h3>
+            <div class="price">$65</div>
+            <p class="price-note">
+              A longer outing for dogs suited to running.
+            </p>
+            <a
+              class="button"
+              href="https://www.timetopet.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Choose 60 Minutes</a>
+          </article>
+        </div>
+
+        <p class="pricing-note">
+          Running sessions are arranged based on each dog's
+          fitness, needs, and suitability for exercise.
+        </p>
+      </div>
     </section>
 
-    <section class="cream" id="faq">
+    <!-- FAQ -->
+    <section id="faq">
       <div class="container">
         <div class="section-intro center">
           <div class="eyebrow">Good questions</div>
@@ -554,11 +638,11 @@
           <details>
             <summary>Can any dog go on a run?</summary>
             <p>
-              Not every dog is suited to running. Age, breed,
-              health, fitness, weather, and individual temperament
-              all matter. We'll discuss your dog before arranging
-              a session. Consult your veterinarian if you're unsure
-              whether running is appropriate.
+              Not every dog is suited to running. Age, health,
+              fitness, weather, and individual temperament all matter.
+              We'll discuss your dog before arranging a session.
+              Consult your veterinarian if you're unsure whether
+              running is appropriate.
             </p>
           </details>
 
@@ -566,44 +650,50 @@
             <summary>Where do you operate?</summary>
             <p>
               We focus on Pittsburgh and surrounding neighborhoods.
-              Contact us with your location to confirm availability.
+              Use the booking process to share your location and
+              confirm service availability.
             </p>
           </details>
 
           <details>
             <summary>How do I book a run?</summary>
             <p>
-              Contact us to discuss your dog and scheduling.
-              Online booking details will be added here when available.
+              Click any Book a Run button to visit our booking
+              platform. Booking details and availability will depend
+              on our configured customer portal.
             </p>
           </details>
 
           <details>
             <summary>What if my dog is new to running?</summary>
             <p>
-              Tell us about your dog's experience and energy level.
-              Any introduction to running should be gradual and
-              appropriate for the individual dog.
+              Let us know about your dog's experience and energy level.
+              Running should be introduced gradually and be appropriate
+              for the individual dog.
             </p>
           </details>
         </div>
       </div>
     </section>
 
+    <!-- Final booking CTA -->
     <section class="contact" id="contact">
       <div class="container">
         <div class="eyebrow">Let's get moving</div>
+
         <h2>Ready to put those paws to work?</h2>
+
         <p>
-          Tell us about your dog and where you're located.
-          We'll discuss whether our running service is a good fit.
+          Find a session that works for your dog and take the
+          first step toward a more active routine.
         </p>
 
-        <!-- Replace this placeholder with your booking URL
-             or business email before launching. -->
-        <a class="button" href="mailto:REPLACE-WITH-YOUR-EMAIL">
-          Get in Touch →
-        </a>
+        <a
+          class="button"
+          href="https://www.timetopet.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Book a Run →</a>
       </div>
     </section>
   </main>
