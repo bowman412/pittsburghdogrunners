@@ -4,20 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pittsburgh Dog Runners provides active dog-running services for Pittsburgh-area dogs. Book a 30-minute run for $40.">
-  <meta name="theme-color" content="#102b25">
-  <title>Pittsburgh Dog Runners | Better Runs. Happier Dogs.</title>
+  <meta name="description" content="Pittsburgh Dog Runners provides dedicated dog-running services in Pittsburgh. Book a 30-minute run for $40.">
+  <meta name="theme-color" content="#003594">
+  <title>Pittsburgh Dog Runners | Your Dog Has Energy. We've Got Miles.</title>
 
   <style>
     :root {
-      --navy: #102b25;
-      --green: #26734d;
-      --lime: #d7f36a;
-      --cream: #f7f8f3;
-      --text: #24332d;
-      --muted: #64736b;
+      --blue: #003594;
+      --blue-dark: #00245f;
+      --gold: #ffb81c;
+      --gold-light: #fff5d8;
+      --cream: #f7f9fc;
+      --text: #202b3c;
+      --muted: #657186;
       --white: #ffffff;
-      --border: #e1e7df;
+      --border: #dfe5ef;
     }
 
     * { box-sizing: border-box; }
@@ -40,7 +41,7 @@
     }
 
     header {
-      background: var(--navy);
+      background: var(--blue);
       color: var(--white);
     }
 
@@ -62,7 +63,7 @@
 
     .brand span {
       display: block;
-      color: var(--lime);
+      color: var(--gold);
       font-size: 11px;
       letter-spacing: 2px;
       margin-top: 5px;
@@ -75,7 +76,7 @@
       align-items: center;
     }
 
-    .nav-links a {
+    .nav-links a:not(.button) {
       color: var(--white);
       text-decoration: none;
       font-size: 14px;
@@ -84,23 +85,24 @@
     .button {
       display: inline-block;
       padding: 13px 22px;
-      background: var(--lime);
-      color: var(--navy);
+      background: var(--gold);
+      color: var(--blue-dark);
       text-decoration: none;
-      font-weight: 700;
-      border-radius: 7px;
+      font-weight: 800;
+      border-radius: 6px;
       transition: transform .2s, background .2s;
     }
 
     .button:hover {
-      background: #e4ff91;
+      background: #ffca52;
       transform: translateY(-2px);
     }
 
     .hero {
-      background: var(--navy);
+      background: var(--blue);
       color: var(--white);
-      padding: 40px 0 82px;
+      padding: 42px 0 82px;
+      border-top: 1px solid rgba(255,255,255,.15);
     }
 
     .hero-grid {
@@ -111,14 +113,14 @@
     }
 
     .eyebrow {
-      color: var(--green);
+      color: var(--blue);
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 12px;
       font-weight: 800;
     }
 
-    .hero .eyebrow { color: var(--lime); }
+    .hero .eyebrow { color: var(--gold); }
 
     h1, h2, h3 { line-height: 1.15; }
 
@@ -137,7 +139,7 @@
     h3 { font-size: 21px; }
 
     .hero p {
-      color: #d8e3dc;
+      color: #e2eaf8;
       font-size: 18px;
       max-width: 540px;
       margin-bottom: 28px;
@@ -149,11 +151,12 @@
       height: 100%;
       max-height: 490px;
       object-fit: cover;
-      border-radius: 16px;
+      border-radius: 12px;
+      border: 3px solid rgba(255,184,28,.8);
     }
 
     .hero-note {
-      color: #c3d2c9;
+      color: #e2eaf8;
       font-size: 14px;
       margin-top: 16px;
     }
@@ -183,11 +186,13 @@
     .feature {
       padding: 28px;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-top: 4px solid var(--gold);
+      border-radius: 8px;
       background: var(--white);
     }
 
     .feature-icon {
+      color: var(--blue);
       font-size: 30px;
       margin-bottom: 12px;
     }
@@ -211,8 +216,8 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: var(--lime);
-      color: var(--navy);
+      background: var(--gold);
+      color: var(--blue-dark);
       font-weight: 800;
     }
 
@@ -224,12 +229,13 @@
       padding: 38px;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: 0 12px 40px rgba(16,43,37,.06);
+      border-top: 6px solid var(--gold);
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,53,148,.08);
     }
 
     .price {
-      color: var(--green);
+      color: var(--blue);
       font-size: 58px;
       font-weight: 800;
       line-height: 1.1;
@@ -267,20 +273,23 @@
     details p { color: var(--muted); }
 
     .contact {
-      background: var(--navy);
+      background: var(--blue);
       color: var(--white);
       text-align: center;
+      border-top: 6px solid var(--gold);
     }
 
+    .contact .eyebrow { color: var(--gold); }
+
     .contact p {
-      color: #d8e3dc;
+      color: #e2eaf8;
       max-width: 580px;
       margin: 0 auto 28px;
     }
 
     footer {
-      background: #0a1e19;
-      color: #c3d2c9;
+      background: var(--blue-dark);
+      color: #e2eaf8;
       padding: 25px 0;
       font-size: 13px;
     }
@@ -292,7 +301,7 @@
       justify-content: space-between;
     }
 
-    footer a { color: var(--lime); }
+    footer a { color: var(--gold); }
 
     @media (max-width: 760px) {
       nav {
@@ -337,7 +346,7 @@
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
-          <a class="button" href="#contact">Get Started</a>
+          <a class="button" href="#contact">Book a Run</a>
         </div>
       </nav>
     </div>
@@ -347,7 +356,7 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">A new kind of dog exercise</div>
+          <div class="eyebrow">Pittsburgh's dog-running service</div>
           <h1>Your dog has energy. We've got miles.</h1>
           <p>
             Give your dog a chance to run, explore, and get moving
@@ -391,7 +400,7 @@
 
           <article class="feature">
             <div class="feature-icon" aria-hidden="true">🐾</div>
-            <h3>Individual attention</h3>
+            <h3>Personal attention</h3>
             <p>
               We learn about your dog's needs and plan a run
               appropriate for them.
@@ -453,9 +462,7 @@
         <div class="section-intro">
           <div class="eyebrow">Straightforward pricing</div>
           <h2>Make room for more miles.</h2>
-          <p>
-            A simple starting price for dedicated dog-running service.
-          </p>
+          <p>A simple starting price for dedicated dog-running service.</p>
         </div>
 
         <div class="pricing-card">
@@ -490,17 +497,16 @@
               Not every dog is suited to running. Age, breed,
               health, fitness, weather, and individual temperament
               all matter. We'll discuss your dog before arranging
-              a session, and owners should consult their veterinarian
-              if they're unsure whether running is appropriate.
+              a session. Consult your veterinarian if you're unsure
+              whether running is appropriate.
             </p>
           </details>
 
           <details>
             <summary>Where do you operate?</summary>
             <p>
-              We are focused on Pittsburgh and surrounding
-              neighborhoods. Contact us with your location
-              to confirm service availability.
+              We focus on Pittsburgh and surrounding neighborhoods.
+              Contact us with your location to confirm availability.
             </p>
           </details>
 
@@ -533,8 +539,8 @@
           We'll discuss whether our running service is a good fit.
         </p>
 
-        <!-- Replace this link with your booking platform URL
-             or your real business email before launch. -->
+        <!-- Replace this placeholder with your booking URL
+             or business email before launching. -->
         <a class="button" href="mailto:REPLACE-WITH-YOUR-EMAIL">
           Get in Touch →
         </a>
@@ -544,7 +550,7 @@
 
   <footer>
     <div class="container">
-      <div>© <span id="year">2026</span> Pittsburgh Dog Runners</div>
+      <div>© 2026 Pittsburgh Dog Runners</div>
       <div>Helping Pittsburgh dogs get moving.</div>
     </div>
   </footer>
