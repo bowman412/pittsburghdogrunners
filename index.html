@@ -4,11 +4,549 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pittsburgh Dog Runners</title>
+  <meta name="description" content="Pittsburgh Dog Runners provides active dog-running services for Pittsburgh-area dogs. Book a 30-minute run for $40.">
+  <meta name="theme-color" content="#102b25">
+  <title>Pittsburgh Dog Runners | Better Runs. Happier Dogs.</title>
+
+  <style>
+    :root {
+      --navy: #102b25;
+      --green: #26734d;
+      --lime: #d7f36a;
+      --cream: #f7f8f3;
+      --text: #24332d;
+      --muted: #64736b;
+      --white: #ffffff;
+      --border: #e1e7df;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: var(--white);
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 0;
+    }
+
+    .brand {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--lime);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      background: var(--lime);
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 7px;
+      transition: transform .2s, background .2s;
+    }
+
+    .button:hover {
+      background: #e4ff91;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 40px 0 82px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .hero .eyebrow { color: var(--lime); }
+
+    h1, h2, h3 { line-height: 1.15; }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      letter-spacing: -2px;
+      margin: 16px 0 22px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      letter-spacing: -1px;
+      margin: 12px 0 18px;
+    }
+
+    h3 { font-size: 21px; }
+
+    .hero p {
+      color: #d8e3dc;
+      font-size: 18px;
+      max-width: 540px;
+      margin-bottom: 28px;
+    }
+
+    .hero-photo {
+      width: 100%;
+      min-height: 360px;
+      height: 100%;
+      max-height: 490px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .hero-note {
+      color: #c3d2c9;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+
+    section { padding: 82px 0; }
+
+    .section-intro {
+      max-width: 650px;
+      margin-bottom: 36px;
+    }
+
+    .section-intro p { color: var(--muted); }
+
+    .center { text-align: center; }
+
+    .center .section-intro {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+    }
+
+    .feature-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .cream { background: var(--cream); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .step-number {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--lime);
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .step p { color: var(--muted); }
+
+    .pricing-card {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 38px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(16,43,37,.06);
+    }
+
+    .price {
+      color: var(--green);
+      font-size: 58px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 18px 0 8px;
+    }
+
+    .price small {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .pricing-card ul {
+      padding-left: 20px;
+      color: var(--muted);
+      text-align: left;
+      margin: 24px 0;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    details p { color: var(--muted); }
+
+    .contact {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .contact p {
+      color: #d8e3dc;
+      max-width: 580px;
+      margin: 0 auto 28px;
+    }
+
+    footer {
+      background: #0a1e19;
+      color: #c3d2c9;
+      padding: 25px 0;
+      font-size: 13px;
+    }
+
+    footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+    }
+
+    footer a { color: var(--lime); }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links { gap: 16px; }
+
+      .hero { padding: 28px 0 58px; }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero-photo { min-height: 260px; }
+
+      section { padding: 58px 0; }
+
+      .features, .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card { padding: 26px; }
+
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Pittsburgh Dog Runners</h1>
-  <p>Professional running adventures for your dog.</p>
-  <p>Website coming soon!</p>
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home">
+          PITTSBURGH DOG RUNNERS
+          <span>BETTER RUNS. HAPPIER DOGS.</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a class="button" href="#contact">Get Started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">A new kind of dog exercise</div>
+          <h1>Your dog has energy. We've got miles.</h1>
+          <p>
+            Give your dog a chance to run, explore, and get moving
+            with dedicated running companions in Pittsburgh.
+          </p>
+          <a class="button" href="#contact">Get Your Dog Running →</a>
+          <div class="hero-note">
+            30-minute runs · $40 per session
+          </div>
+        </div>
+
+        <img
+          class="hero-photo"
+          src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1100&q=85"
+          alt="Happy golden retriever outdoors"
+        >
+      </div>
+    </section>
+
+    <section>
+      <div class="container center">
+        <div class="section-intro">
+          <div class="eyebrow">More than a walk</div>
+          <h2>For dogs who love to move.</h2>
+          <p>
+            Life gets busy. Your dog's need for exercise doesn't.
+            Pittsburgh Dog Runners helps owners make active outings
+            part of their dog's routine.
+          </p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">🏃</div>
+            <h3>Purposeful exercise</h3>
+            <p>
+              An active outing tailored to your dog's fitness,
+              pace, and comfort.
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">🐾</div>
+            <h3>Individual attention</h3>
+            <p>
+              We learn about your dog's needs and plan a run
+              appropriate for them.
+            </p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">📍</div>
+            <h3>Local service</h3>
+            <p>
+              Pittsburgh-area service designed around busy
+              owners and energetic dogs.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cream" id="how-it-works">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">Simple from the start</div>
+          <h2>Three steps to a happier, tired dog.</h2>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">1</span>
+            <h3>Tell us about your dog</h3>
+            <p>
+              Share your dog's age, size, running experience,
+              and any needs we should know about.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-number">2</span>
+            <h3>Arrange a run</h3>
+            <p>
+              We'll coordinate a time and discuss a suitable
+              route and pace for your dog.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-number">3</span>
+            <h3>Get moving</h3>
+            <p>
+              Your dog gets an active outing while you focus
+              on the rest of your day.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container center">
+        <div class="section-intro">
+          <div class="eyebrow">Straightforward pricing</div>
+          <h2>Make room for more miles.</h2>
+          <p>
+            A simple starting price for dedicated dog-running service.
+          </p>
+        </div>
+
+        <div class="pricing-card">
+          <div class="eyebrow">The run</div>
+          <h3>30-Minute Dog Run</h3>
+          <div class="price">$40 <small>/ session</small></div>
+          <p>
+            An active outing planned around your dog's
+            ability and comfort.
+          </p>
+          <ul>
+            <li>30-minute running session</li>
+            <li>Initial discussion of your dog's needs</li>
+            <li>Scheduling coordinated with you</li>
+          </ul>
+          <a class="button" href="#contact">Ask About Availability</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cream" id="faq">
+      <div class="container">
+        <div class="section-intro center">
+          <div class="eyebrow">Good questions</div>
+          <h2>Frequently asked questions.</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Can any dog go on a run?</summary>
+            <p>
+              Not every dog is suited to running. Age, breed,
+              health, fitness, weather, and individual temperament
+              all matter. We'll discuss your dog before arranging
+              a session, and owners should consult their veterinarian
+              if they're unsure whether running is appropriate.
+            </p>
+          </details>
+
+          <details>
+            <summary>Where do you operate?</summary>
+            <p>
+              We are focused on Pittsburgh and surrounding
+              neighborhoods. Contact us with your location
+              to confirm service availability.
+            </p>
+          </details>
+
+          <details>
+            <summary>How do I book a run?</summary>
+            <p>
+              Contact us to discuss your dog and scheduling.
+              Online booking details will be added here when available.
+            </p>
+          </details>
+
+          <details>
+            <summary>What if my dog is new to running?</summary>
+            <p>
+              Tell us about your dog's experience and energy level.
+              Any introduction to running should be gradual and
+              appropriate for the individual dog.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="eyebrow">Let's get moving</div>
+        <h2>Ready to put those paws to work?</h2>
+        <p>
+          Tell us about your dog and where you're located.
+          We'll discuss whether our running service is a good fit.
+        </p>
+
+        <!-- Replace this link with your booking platform URL
+             or your real business email before launch. -->
+        <a class="button" href="mailto:REPLACE-WITH-YOUR-EMAIL">
+          Get in Touch →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year">2026</span> Pittsburgh Dog Runners</div>
+      <div>Helping Pittsburgh dogs get moving.</div>
+    </div>
+  </footer>
 </body>
 </html>
