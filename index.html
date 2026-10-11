@@ -203,22 +203,6 @@
       font-size: 13px;
     }
 
-    .insurance-note {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 12px;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .insurance-note span {
-      color: var(--gold);
-      font-size: 18px;
-      line-height: 1;
-    }
-
     .hero-photo {
       display: block;
       width: 100%;
@@ -238,6 +222,13 @@
     .section-intro {
       max-width: 630px;
       margin-bottom: 34px;
+    }
+
+    /* Center the How It Works intro without changing other sections */
+    #how-it-works .section-intro {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
     }
 
     .section-intro p {
@@ -278,9 +269,14 @@
       font-weight: 800;
     }
 
+    .step {
+      text-align: center;
+    }
+
     .step p {
       color: var(--muted);
-      margin-bottom: 0;
+      max-width: 300px;
+      margin: 0 auto;
     }
 
     /* Pricing */
@@ -356,23 +352,29 @@
     /* FAQ */
 
     .faq-list {
-      max-width: 760px;
+      width: 100%;
+      max-width: 720px;
       margin: 0 auto;
+      text-align: left;
     }
 
-    details {
-      padding: 19px 0;
+    .faq-list details {
+      padding: 20px 4px;
       border-bottom: 1px solid var(--border);
     }
 
-    summary {
+    .faq-list summary {
       cursor: pointer;
       font-weight: 700;
+      line-height: 1.45;
+      padding-right: 8px;
     }
 
-    details p {
+    .faq-list details p {
       color: var(--muted);
-      margin-bottom: 0;
+      max-width: 650px;
+      line-height: 1.7;
+      margin: 12px 0 0;
     }
 
     /* Final booking section */
@@ -455,12 +457,32 @@
       }
 
       section {
-        padding: 54px 0;
+        padding: 48px 0;
+      }
+
+      .container {
+        width: 88%;
+      }
+
+      #how-it-works .section-intro {
+        margin-bottom: 32px;
       }
 
       .steps {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 30px;
+      }
+
+      .step p {
+        max-width: 340px;
+      }
+
+      .faq-list {
+        width: 100%;
+      }
+
+      .faq-list details {
+        padding: 18px 0;
       }
 
       .pricing-options {
@@ -554,11 +576,6 @@
 
           <div class="hero-note">
             30, 45, and 60-minute sessions available.
-          </div>
-
-          <div class="insurance-note">
-            <span aria-hidden="true">✓</span>
-            Fully insured for your peace of mind.
           </div>
         </div>
 
@@ -754,7 +771,7 @@
 
         <div class="contact-email">
           Questions? Email us at
-          <a class="email-link" href="mailto:info@pittsburghdogrunners.com">info@pittsburghdogrunners.com</a>
+          <a class="email-link" href="mailto:info@pittsburghdogrunning.com">info@pittsburghdogrunning.com</a>
         </div>
       </div>
     </section>
@@ -764,7 +781,7 @@
     <div class="container">
       <div>© 2026 Pittsburgh Dog Runners</div>
       <div>
-        <a class="footer-email" href="mailto:info@pittsburghdogrunners.com">info@pittsburghdogrunners.com</a>
+        <a class="footer-email" href="mailto:info@pittsburghdogrunning.com">info@pittsburghdogrunning.com</a>
         &nbsp;·&nbsp; Helping Pittsburgh dogs get moving.
       </div>
     </div>
